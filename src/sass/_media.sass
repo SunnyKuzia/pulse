@@ -1,0 +1,142 @@
+@media (max-width: 991px)
+    .container
+        max-width: 720px // прописываем, чтобы центрировался контент (не прилипает к границам страницы) при изменении размера экрана в адаптивной верстке (те правильно применялось margin 0 auto а не съедалось при уменьшении размера экрана)
+        //так как мы пишем на 1 меньше (по bootstrap напр. не 992px а 991px) то max-width в 
+        //.container мы пишем для размера экрана от 768px до 991px (те для medium)
+    .promo
+        &__header
+            font-size: 37px
+        &__subheader
+            font-size: 19px
+        &__icons
+            width: 370px
+    .button
+        &_main
+            width: 270px
+    .title
+        font-size: 25px
+        &_white
+            font-size: 31px
+            line-height: 43px
+    .advantages
+        &__item
+            max-width: 200px
+        &__descr
+            font-size: 13px
+    .consultation
+        &__descr
+            font-size: 19px
+            line-height: 23px
+
+@media (max-width: 767px)
+    .container
+        max-width: 540px
+    .header
+        &__official
+            display: none
+        &__contacts
+            display: none
+    .hamburger
+        display: block
+        height: 33px
+        width: 40px
+        span
+            display: block
+            height: 3px
+            width: 100%
+            margin-bottom: 6px
+            background-color: $white-color
+    .promo
+        &__header
+            font-size: 36px
+        &__icons
+            width: 340px
+        &__link
+            font-size: 14px
+    .button
+        &_main
+            width: 250px
+    .title
+        font-size: 23px
+        &_white
+            font-size: 24px
+            line-height: 33px
+    .advantages
+        &__wrapper
+            flex-direction: column
+            align-items: center
+        &__item
+            &:nth-child(2)
+                margin-top: 40px
+            &:nth-child(3)
+                margin-top: 40px
+    .consultation
+        &__descr
+            font-size: 17px
+            line-height: 22px
+
+@media (max-width: 575px)
+    .container
+        width: 100%
+    .header
+        padding: 0 12px
+        &__logo
+            width: 200px
+    .hamburger
+        height: 14px
+        width: 32px
+        span
+            height: 3px
+            margin-bottom: 4px
+    .promo  
+        &__wrapper
+            margin-top: 70px
+            align-items: center
+        &__header
+            font-size: 24px
+        &__subheader
+            font-size: 14px
+            margin-top: 10px
+        &__icons
+            width: 300px
+            margin-top: 70px
+        &__icon
+            font-size: 11px
+        &__link
+            font-size: 12px
+    .button
+        &_main
+            width: 190px
+            font-size: 13px
+    .title
+        font-size: 18px
+        &_white
+            font-size: 19px
+            text-align: center
+    .advantages
+        &__wrapper
+            margin-top: 55px
+    .consultation
+        &__descr
+            font-size: 14px
+            text-align: center
+            margin-top: 21px
+    .feed-form
+        margin: 36px auto 0
+        width: 260px
+    
+
+
+
+
+                
+
+
+
+
+
+
+            
+
+    
+    
