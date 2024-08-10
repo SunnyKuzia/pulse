@@ -7,6 +7,7 @@
         url('../fonts/MuseoSansCyrl-500.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
+    /* тут мы тоже прописываем url путь относительно index.html потому что fonts.css подключается в нем  */
 }
 
 @font-face {

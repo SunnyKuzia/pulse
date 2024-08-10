@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- мы скачали slick zip и поместили в проект slick.css и slick.min.js и подключили их как обычно, также мы внизу где scripts до подключения slick.min.js скопировали и вставили ссылки на jQuery библиотеку -->
     <link rel="stylesheet" href="css/style.min.css">
     <title>Pulse</title>
 </head>
@@ -98,17 +100,17 @@
             </form>
         </div>
     </section>
-    <section class="pulsometer">
+    <section class="carousel">
         <div class="container">
-            <div class="pulsometer__slider">
-                <div class="arrow__prev">
-                    <img src="icons/arrow-left.png" alt="arrow-left">
+            <div class="carousel__inner">
+                <div>
+                    <img src="img/slide1.jpeg" alt="slide1">
                 </div>
-                <div class="pulsometer__slide">
-                    <img src="img/polar.png" alt="polar">
+                <div>
+                    <img src="img/slide2.jpeg" alt="slide2">
                 </div>
-                <div class="arrow-next">
-                    <img src="icons/arrow-right.png" alt="arrow-right">
+                <div>
+                    <img src="img/slide3.jpeg" alt="slide3">
                 </div>
             </div>
         </div>
@@ -291,8 +293,12 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- мы дописали https: (протокол) вначале скопированного src чтобы при запуске index.html напрямую из папки наши слайдеры из jQuery работали (так они работают только при запуске через сервер)  -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
-<script src="js/index.js"></script>
 
 </html>

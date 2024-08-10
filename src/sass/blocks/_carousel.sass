@@ -1,0 +1,39 @@
+.carousel
+    padding: 81px 0 
+    /* значения взяли для самой картмнки с самым большим height (у нее самые маленькие paddings) */
+    &__inner
+        position: relative
+        max-width: 750px
+        margin: 0 auto
+        img
+            width: 100%
+    .slick-prev, .slick-next
+        font-size: 0
+        position: absolute
+        top: 50%
+        left: -70px
+        transform: translateY(-50%)
+        border: none
+        background-color: $white-color
+        img
+            width: 31px
+            height: 50px
+    .slick-next
+        left: auto // таким образом мы выключили влияние left: -70px из верхних стилей
+        right: -70px
+    .slick-dots
+        display: flex
+        justify-content: center
+        margin-top: 15px
+        li
+            opacity: .25
+            color: black
+            width: 20px
+            &.slick-active
+                opacity: .75
+                color: black
+            button
+                font-size: 0
+                line-height: 0
+                color: $white-color
+                border: none
