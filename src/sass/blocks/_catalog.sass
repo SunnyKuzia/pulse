@@ -1,0 +1,163 @@
+.catalog
+    padding-bottom: 79px
+    &__tabs
+        margin-top: 46px
+        margin-bottom: 57px
+        list-style-type: none
+        display: flex
+        justify-content: center
+        align-items: center
+    &__tab
+        width: 222px
+        height: 52px
+        margin: 0 5px
+        font-size: 18px
+        line-height: 49px
+        font-weight: 400
+        text-align: center
+        text-transform: uppercase
+        color: rgb(107, 107, 107)
+        border: 2px solid rgb(208, 208, 208)
+        transform: skewX(-20deg) // наклоняет tab и соответсвенно текст внутри него
+        transition: 0.5s all
+        cursor: pointer
+        &:hover
+            box-shadow: 3px 3px 20px $main-color
+            border: none
+        div
+            transform: skewX(20deg) 
+            // в обратную сторону чтобы текст внутри tab вернулся в вертикальное (обычное) положение
+        &_active
+            color: $white-color
+            background-color: $main-color
+            border-color: $main-color
+    &__content
+        display: none
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+        margin-top: 57px
+        &_active
+            display: flex
+    &-item
+        position: relative
+        margin-bottom: 19px
+        overflow: hidden
+        width: 303px
+        min-height: 442px 
+        // чтобы высота могла расстягиваться (и не могла уменьшаться) при добавлении/уменьшении описания товара
+        padding: 20px // посчитали от разделительной линии по бокам
+        border: 2px solid rgb(232, 232, 232)
+        &__wrapper
+            display: flex
+            width: calc(200% + 40px) //блок со сменяющейся информацией на карточке вдвое больше для помещения обеих сторон
+            overflow: hidden
+        &__content
+            position: relative
+            width: 50% // от ширины родителя
+            margin-right: 0
+            transform: translateX(-100%)
+            transition: 0.5s all
+            &_active
+                transform: translateX(0%)
+                margin-right: 20px
+        &__img
+            display: block
+            margin: 0 auto
+            max-width: 100% 
+            // если вставляемая в блок картинка будет больше ширины блока, то она займет все 100% блока и не более
+            height: 200px
+        &__subtitle
+            margin-top: 18px
+            color: rgb(13, 13, 13)
+            font-size: 16px
+            font-weight: 700
+            line-height: 25px
+            text-align: center
+        &__descr
+            margin-top: 15px
+            color: rgb(13, 13, 13)
+            font-size: 14px
+            font-weight: 300
+            line-height: 22px
+            text-align: center
+        &__link 
+            display: block
+            margin-top: 10px
+            color: $main-color
+            font-size: 14px
+            font-weight: 500
+            line-height: 14px
+            text-align: center
+            text-decoration-line: underline
+            text-transform: uppercase
+            &:hover
+                color: $main-color
+        &__list
+            width: 50% // от ширины родителя
+            margin-left: 20px
+            padding-right: 20px
+            padding-left: 19px
+            transform: translateX(0%)
+            transition: 0.5s all
+            list-style-type: none
+            &_active
+                transform: translateX(-100%)
+                margin-left: 0px
+            li
+                position: relative // при &::before задаем position для li а не для ul
+                color: rgb(85, 85, 85)
+                font-size: 14px
+                font-weight: 300
+                line-height: 27px
+                margin-bottom: 10px
+                &::before
+                    content: ''
+                    position: absolute
+                    left: -15px
+                    top: 9px
+                    width: 8px
+                    height: 8px
+                    background-color: $main-color
+        &__back
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform: translateX(calc(-50% - 19px))
+            // другие стили чем у &__link потому что информация на обороте может добавляться в будущем и наша ссылка НАЗАД будет подстраиваться под нее (-19 это левый padding)
+            color: $main-color
+            font-size: 14px
+            font-weight: 500
+            line-height: 14px
+            text-align: center
+            text-decoration-line: underline
+            text-transform: uppercase
+            &:hover
+                color: $main-color
+        hr
+            margin-top: 17px
+            margin-bottom: 24px
+            border-bottom: none 
+            // <hr> создается границами и чтобы уменьшить его высоту мы убираем одну из них
+            // и для него принято задавать оба margins и top и bottom
+            background-color: rgb(232, 232, 232)
+        &__footer
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__old-price
+            color: rgb(85, 85, 85)
+            font-size: 14px
+            font-weight: 300
+            line-height: 14px
+            text-decoration-line: line-through
+        &__price
+            color: rgb(5, 5, 5)
+            font-size: 20px
+            font-weight: 700
+            line-height: 20px
+            
+
+
+
+
