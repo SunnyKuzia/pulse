@@ -1,0 +1,56 @@
+.footer
+    position: relative
+    height: 630px 
+    // не min-height потому что не планируется никакой дополнительной информации в секции
+    // и расширяться блок не будет в будущем 
+    &__info
+        padding: 51px 53px 56px
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        //-50% от ширины блока
+        width: 460px
+        height: 270px
+        background-color: $main-color
+    &__address
+        font-style: normal
+        // убрать у тега address italic по умолчанию
+        color: $white-color
+        font-size: 20px
+        font-weight: 500
+        line-height: 20px
+        text-align: center
+        cursor: pointer
+    &__phone
+        margin-top: 36px
+        display: block
+        color: $white-color
+        font-size: 20px
+        font-weight: 700
+        line-height: 20px
+        text-align: center
+        text-decoration: none
+        &:hover
+            text-decoration: underline
+            color: $white-color
+    &__social
+        margin-top: 36px
+        display: flex
+        align-items: center
+        justify-content: center
+        &-item
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 52px
+            height: 52px
+            margin-right: 27px
+            cursor: pointer
+            border: 2px solid rgb(255, 255, 255)
+            border-radius: 100%
+            img
+                height: 25px
+                //ограничение по высоте для иконок внутри кружков
+            &:last-of-type
+                margin-right: 0

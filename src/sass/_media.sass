@@ -30,6 +30,7 @@
             left: 50%
             bottom: 0
             transform: translateX(-10px)
+    
 
 @media (max-width: 767px)
     .container
@@ -79,6 +80,18 @@
             flex-direction: column
             justify-content: center
             align-items: center
+    .feed
+        &__photo
+            margin-right: 40px
+        &__name
+            font-size: 16px
+        &__data
+            font-size: 13px
+            margin-bottom: 35px
+        &__text
+            font-size: 14px
+            line-height: 22px
+    
 
 @media (max-width: 575px)
     .container
@@ -143,6 +156,20 @@
                 li
                     font-size: 14px
                     line-height: 22px
+    .feed
+        &__block
+            flex-direction: column
+            align-items: center
+        &__photo
+            margin-right: 0
+        &__name
+            text-align: center
+            margin-top: 30px
+        &__data
+            text-align: center
+        &__text
+            text-align: center
+
 
 
 
