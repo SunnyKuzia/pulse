@@ -44,4 +44,29 @@ $(document).ready(function () {
     }
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
+
+
+    //Modal
+
+    //мы присвоили всем кнопкам, которые вызывают модальное окно для дальнейшей консультации атрибут data-modal=consultation и по нему найдем их и зададим обработчик на клик 
+    $('[data-modal=consultation]').click(function () {
+        $('.overlay, #consultation').fadeIn('slow');
+        $('body').css('overflow', 'hidden');
+    });
+
+    $('.modal__close, .overlay').click(function (event) {
+        $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+        if (event.target.matches('.overlay')) {
+            $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+        };
+        $('body').css('overflow', '');
+    });
+
+    $('.button_mini').each(function (i) {
+        $(this).click(function () {
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+            $('body').css('overflow', 'hidden');
+        });
+    });
 });
