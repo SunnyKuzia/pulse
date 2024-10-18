@@ -32,6 +32,12 @@
 
 @media (max-width: 991px)
     .button
+        &:hover 
+            background: $main-color
+            border-radius: 5px
+            border-style: none
+            // очень важно: когда мы в мобильной ориентации (при адаптивной верстке) меняем Mobile на Desktop, то при наведении курсора срабатывают стили наведения, а это дурной тон, поэтому для hover  прописываем такие же стили background как для кнопок
+            
         &_main
             width: 270px
 
