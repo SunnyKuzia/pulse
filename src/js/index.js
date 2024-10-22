@@ -55,11 +55,12 @@ $(document).ready(function () {
     });
 
     $('.modal__close, .overlay').click(function (event) {
-        $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
-        if (event.target.matches('.overlay')) {
+        if (event.target.matches('.overlay') || event.target.matches('.modal__close')) {
+            // чтобы при клике на затемненную область не происходило сработки события клика на самой форме(при погружении события) 
+            // крестик прописали тоже сюда чтобы не прописывать для него отдельно правила
             $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+            $('body').css('overflow', '');
         };
-        $('body').css('overflow', '');
     });
 
     $('.button_mini').each(function (i) {
@@ -69,4 +70,48 @@ $(document).ready(function () {
             $('body').css('overflow', 'hidden');
         });
     });
+
+
+
+    //Validation forms (jQuery Validation plugin)
+
+
+
+
+    function validateForms(formSelector) {
+        // метод .validate() применяется только для одной формы, поэтому мы каждой форме задаем id или ее родителю, находим ее по id и вызываем этот метод каждой форме индивидуально
+        $(formSelector).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: 'required',
+                email: {
+                    required: true,
+                    email: true // проверка что на самом деле введен email
+                }
+            },
+            messages: {
+                name: {
+                    required: "Введите имя",
+                    minlength: jQuery.validator.format("Необходимо ввести как минимум {0} символа!")
+                },
+                phone: 'Введите номер телефона',
+                email: {
+                    required: "Введите адрес электронной почты",
+                    email: "Неверный адрес электронной почты"
+                }
+            } //структура объекта messages одинакова со структурой объекта rules
+        });
+    }
+
+    validateForms('#consultation-form');
+    validateForms('#consultation form');
+    validateForms('#order form');
+
+
+    // Masked phone number
+
+    $('input[name=phone]').mask('+375(99) 999-99-99');
 });

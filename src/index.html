@@ -91,11 +91,11 @@
             <div class="consultation__descr">Просто заполните форму заявки<br>
                 и мы перезвоним вам в течении 10 минут
             </div>
-            <form class="feed-form" action="#">
-                <input name="name" required type="text" class="consultation__input" placeholder="Ваше имя">
-                <input name="phone" required type="tel" class="consultation__input" placeholder="Ваш телефон">
-                <input name="email" required type="email" class="consultation__input" placeholder="Ваш E-mail">
-                <button data-modal="consultation" class="button button_submit">заказать консультацию</button>
+            <form id="consultation-form" class="feed-form" action="#">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" type="tel" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш E-mail">
+                <button class="button button_submit">заказать консультацию</button>
                 <!-- задаем именно button(это более современный вариант) а не input type submit  потому что при указании внутри формы именно button он примет на себя type submit-->
             </form>
         </div>
@@ -469,9 +469,9 @@
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
             <form class="feed-form feed-form_consultation" action="#">
-                <input name="name" required type="text" class="consultation__input" placeholder="Ваше имя">
-                <input name="phone" required type="tel" class="consultation__input" placeholder="Ваш телефон">
-                <input name="email" required type="email" class="consultation__input" placeholder="Ваш E-mail">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" type="tel" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш E-mail">
                 <button class="button button_submit">заказать консультацию</button>
                 <!-- задаем именно button(это более современный вариант) а не input type submit  потому что при указании внутри формы именно button он примет на себя type submit-->
             </form>
@@ -481,9 +481,9 @@
             <div class="modal__subtitle">Ваш заказ:</div>
             <div class="modal__descr">Пульсометр Polar FT1</div>
             <form class="feed-form feed-form_consultation" action="#">
-                <input name="name" required type="text" class="consultation__input" placeholder="Ваше имя">
-                <input name="phone" required type="tel" class="consultation__input" placeholder="Ваш телефон">
-                <input name="email" required type="email" class="consultation__input" placeholder="Ваш E-mail">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" type="tel" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш E-mail">
                 <button class="button button_submit">Купить</button>
                 <!-- задаем именно button(это более современный вариант) а не input type submit  потому что при указании внутри формы именно button он примет на себя type submit-->
             </form>
@@ -500,6 +500,9 @@
     <!-- мы дописали https: (протокол) вначале скопированного src чтобы при запуске index.html напрямую из папки на ноуте наши слайдеры из jQuery работали (так они работают только при запуске через сервер)  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <!-- скачиваем из документации zip файл, достаем оттуда jquery.validate.min.js и помещаем в нашу папку js и прописываем src -->
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 
