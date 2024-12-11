@@ -111,7 +111,38 @@ $(document).ready(function () {
     validateForms('#order form');
 
 
+
     // Masked phone number
 
+
+
     $('input[name=phone]').mask('+375(99) 999-99-99');
+
+
+
+    // Отправка писем с сайта
+
+
+    $('form').submit(function (e) { //навешиваем на все формы обработчик
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        } //если в форме есть незаполненные поля (не прошла валидацию), она не отправится
+
+        $.ajax({
+            type: 'POST',
+            url: 'mailer/smart.php',
+            data: $(this).serialize() // $(this) это те данные которые мы получили из формы на которой сработал submit, также здесь мы их приводим в необходимый для сервера формат serialize
+        }).done(function () {
+            $(this).find('input').val(''); //все inputs внутри данной формы мы очищаем после отправки данных
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+            $('form').trigger('reset'); // очищаем все формы
+        });
+        return false;
+    });
+
 });
+
+
